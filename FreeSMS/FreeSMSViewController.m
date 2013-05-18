@@ -31,6 +31,20 @@
 	
 	// Query the database for all contacts records and construct the "contacts" array
     self.contacts = [SQLiteManager selectFromTableName:@"Contacts"];
+    
+    // Create the refresh, fixed-space (optional), and profile buttons.
+    UIBarButtonItem *addressBookItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showAddressBook)];
+    
+    //    // Optional: if you want to add space between the refresh & profile buttons
+    //    UIBarButtonItem *fixedSpaceBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    //    fixedSpaceBarButtonItem.width = 12;
+    
+    UIBarButtonItem *profileBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"About" style:UIBarButtonItemStylePlain target:self action:@selector(about)];
+    profileBarButtonItem.style = UIBarButtonItemStyleBordered;
+    
+    self.navigationItem.rightBarButtonItems = @[addressBookItem, /* fixedSpaceBarButtonItem, */ profileBarButtonItem];
+    
+    [super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -108,13 +122,6 @@
     [self.tableView reloadData];
 }
 
-- (IBAction)showAddressBook:(id)sender {
-    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
-    picker.peoplePickerDelegate = self;
-    
-    [self presentModalViewController:picker animated:YES];
-}
-
 #pragma mark
 #pragma mark Address book
 
@@ -147,6 +154,18 @@
 }
 
 #pragma mark Private methods
+
+- (void)showAddressBook {
+    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
+    
+    [self presentModalViewController:picker animated:YES];
+}
+
+- (void)about {
+    CustomAlertView *alert = [[CustomAlertView alloc] initWithTitle:@"FreeSMS" message:@"Copyright (c) 2012 Roman Slysh. All rights reserved.\n https://github.com/Hantok/FreeSMS" delegate:nil cancelButtonTitle:@"OK :)" otherButtonTitles:nil, nil];
+    [alert show];
+}
 
 - (void)displayPerson:(ABRecordRef)person
 {

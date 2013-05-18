@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import "CustomAlertView.h"
 
 @interface FreeSMSViewController : UITableViewController <ABPeoplePickerNavigationControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *contacts;
 - (IBAction)addNewContact:(id)sender;
-- (IBAction)showAddressBook:(id)sender;
 
 @end

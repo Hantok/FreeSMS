@@ -50,11 +50,6 @@
                                 <segue destination="Za6-iN-RTB" kind="modal" modalTransitionStyle="flipHorizontal" id="n66-2P-j3W"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="hov-II-itq">
-                            <connections>
-                                <action selector="showAddressBook:" destination="Kfw-o1-805" id="Bfv-rB-7y4"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Adj-br-7O2" kind="push" identifier="toSMSView" id="1lf-pF-7ef"/>
@@ -240,6 +235,40 @@
     <resources>
         <image name="update.png" width="256" height="256"/>
     </resources>
+    <classes>
+        <class className="AddViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="add:"/>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ChatViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChatViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="edit:"/>
+                <relationship kind="action" name="sendMessage:"/>
+                <relationship kind="action" name="updateMe:"/>
+                <relationship kind="outlet" name="antibot" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="antibotText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sendMessageButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sendMessageField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="smsCountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="updateMe" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="FreeSMSViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FreeSMSViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addNewContact:"/>
+                <relationship kind="action" name="showAddressBook:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -19,6 +19,7 @@
 		4E6A3AB0169790C400C50B20 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6A3AAF169790C400C50B20 /* AddViewController.m */; };
 		4E6C894317477D5500B0C9E4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E6C894017477D5500B0C9E4 /* SVProgressHUD.bundle */; };
 		4E6C894417477D5500B0C9E4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C894217477D5500B0C9E4 /* SVProgressHUD.m */; };
+		4E6C894917479A9C00B0C9E4 /* CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C894817479A9C00B0C9E4 /* CustomAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4E709AEB166FCA04000C1C4D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E709AEA166FCA04000C1C4D /* Reachability.m */; };
 		4E709AED166FD45F000C1C4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E709AEC166FD45F000C1C4D /* SystemConfiguration.framework */; };
 		4E7146EE1663747800670A92 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7146ED1663747800670A92 /* AddressBookUI.framework */; };
@@ -58,6 +59,8 @@
 		4E6C894017477D5500B0C9E4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = SOURCE_ROOT; };
 		4E6C894117477D5500B0C9E4 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = SOURCE_ROOT; };
 		4E6C894217477D5500B0C9E4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = SOURCE_ROOT; };
+		4E6C894717479A9C00B0C9E4 /* CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlertView.h; sourceTree = "<group>"; };
+		4E6C894817479A9C00B0C9E4 /* CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlertView.m; sourceTree = "<group>"; };
 		4E709AE9166FCA04000C1C4D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4E709AEA166FCA04000C1C4D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4E709AEC166FD45F000C1C4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -156,11 +159,29 @@
 		4E6C893F17477D3200B0C9E4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4E6C894617479A8700B0C9E4 /* CustomAlertView */,
+				4E6C894517479A7400B0C9E4 /* SVProgressHUD */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		4E6C894517479A7400B0C9E4 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
 				4E6C894017477D5500B0C9E4 /* SVProgressHUD.bundle */,
 				4E6C894117477D5500B0C9E4 /* SVProgressHUD.h */,
 				4E6C894217477D5500B0C9E4 /* SVProgressHUD.m */,
 			);
-			name = Sources;
+			name = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		4E6C894617479A8700B0C9E4 /* CustomAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				4E6C894717479A9C00B0C9E4 /* CustomAlertView.h */,
+				4E6C894817479A9C00B0C9E4 /* CustomAlertView.m */,
+			);
+			name = CustomAlertView;
 			sourceTree = "<group>";
 		};
 		4E9B310B163ADFF3008EA31E = {
@@ -313,6 +334,7 @@
 				4E709AEB166FCA04000C1C4D /* Reachability.m in Sources */,
 				4E6A3AB0169790C400C50B20 /* AddViewController.m in Sources */,
 				4E6C894417477D5500B0C9E4 /* SVProgressHUD.m in Sources */,
+				4E6C894917479A9C00B0C9E4 /* CustomAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
