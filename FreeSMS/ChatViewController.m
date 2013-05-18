@@ -143,7 +143,7 @@
         request.HTTPMethod = @"POST";
         
         
-        // указываем параметры POST запроса
+        // set POST request parameters
         NSString *code = [self.contact.phone substringToIndex:3];
         NSString *number = [self.contact.phone substringFromIndex:3];
         
@@ -153,7 +153,6 @@
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         if (connection)
         {
-            // соединение началось
             NSLog(@"Connecting...");
         }
         else
@@ -303,7 +302,7 @@
     NSRange beginning = [txt rangeOfString:@"freeSmsRemain"];
     if (beginning.length != 0)
     {
-        //знаходимо скільки ще можна відіслати смс з поточного ip address
+        //how mane can we send for now?
         NSString *sub1 = [[txt substringFromIndex:NSMaxRange(beginning) + 2] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         txt = [[sub1 substringToIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         //        NSLog(@"strinng is - %@",txt);

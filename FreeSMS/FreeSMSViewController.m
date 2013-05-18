@@ -17,16 +17,11 @@
     int countOfContacts;
 }
 
-//@property (nonatomic, strong) NSString *databasePath;
-//@property (nonatomic, strong) NSString *databaseName;
-
 @end
 
 @implementation FreeSMSViewController
 
 @synthesize contacts = _contacts;
-//@synthesize databasePath = _databasePath;
-//@synthesize databaseName = _databaseName;
 
 #pragma mark LifeCircle
 
@@ -173,33 +168,16 @@
     NSRange zero = [phone rangeOfString:@"0"];
     if(zero.length != 0 && zero.location < 6)
     {
-//        NSString *code;
         phone = [phone substringFromIndex:(NSMaxRange(zero) - 1)];
         if (zero.location == 0)
         {
-//            code = [phone substringToIndex:(NSMaxRange(zero) + 2)];
             phone = [phone substringFromIndex:(NSMaxRange(zero) + 2)];
         }
     }
-//        else
-//        {
-//            code = [phone substringToIndex:(NSMaxRange(zero) - 1)];
-//            phone = [phone substringFromIndex:(NSMaxRange(zero) - 1)];
-//        }
     
         [SQLiteManager insertToContactsWithName:name phone:phone];
         self.contacts = [SQLiteManager selectFromTableName:@"Contacts"];
         [self.tableView reloadData];
-        
-//        self.codeForNumberLabel.text = code;
-//        self.phoneNumber.text = phone;
-//    }
-//    else
-//    {
-//        NSLog(@"Impossible");
-//    }
 }
-
-
 
 @end
