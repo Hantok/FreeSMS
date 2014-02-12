@@ -227,6 +227,10 @@
                                                         , self.sendMessageButton.frame.origin.y - scrollingLandscape
                                                         , self.sendMessageButton.frame.size.width
                                                         , self.sendMessageButton.frame.size.height)];
+            [self.updateMe setFrame:CGRectMake(self.updateMe.frame.origin.x
+                                                        , self.updateMe.frame.origin.y - scrollingLandscape
+                                                        , self.updateMe.frame.size.width
+                                                        , self.updateMe.frame.size.height)];
             [self.smsCountLabel setFrame:CGRectMake(self.smsCountLabel.frame.origin.x
                                                     , self.smsCountLabel.frame.origin.y - scrollingLandscape
                                                     , self.smsCountLabel.frame.size.width
@@ -250,6 +254,10 @@
                                                         , self.sendMessageButton.frame.origin.y - scrolling
                                                         , self.sendMessageButton.frame.size.width
                                                         , self.sendMessageButton.frame.size.height)];
+            [self.updateMe setFrame:CGRectMake(self.updateMe.frame.origin.x
+                                                        , self.updateMe.frame.origin.y - scrolling
+                                                        , self.updateMe.frame.size.width
+                                                        , self.updateMe.frame.size.height)];
             [self.smsCountLabel setFrame:CGRectMake(self.smsCountLabel.frame.origin.x
                                                     , self.smsCountLabel.frame.origin.y - scrolling
                                                     , self.smsCountLabel.frame.size.width
@@ -270,23 +278,27 @@
     [UIView animateWithDuration:0.25F animations:^{
         if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||self.interfaceOrientation == UIInterfaceOrientationLandscapeRight){
             [self.antibot setFrame:CGRectMake(self.antibot.frame.origin.x
-                                              , self.antibot.frame.origin.y - scrollingLandscape
+                                              , self.antibot.frame.origin.y + scrollingLandscape
                                               , self.antibot.frame.size.width
                                               , self.antibot.frame.size.height)];
             [self.antibotText setFrame:CGRectMake(self.antibotText.frame.origin.x
-                                                  , self.antibotText.frame.origin.y - scrollingLandscape
+                                                  , self.antibotText.frame.origin.y + scrollingLandscape
                                                   , self.antibotText.frame.size.width
                                                   , self.antibotText.frame.size.height)];
             [self.sendMessageField setFrame:CGRectMake(self.sendMessageField.frame.origin.x
-                                                       , self.sendMessageField.frame.origin.y - scrollingLandscape
+                                                       , self.sendMessageField.frame.origin.y + scrollingLandscape
                                                        , self.sendMessageField.frame.size.width
                                                        , self.sendMessageField.frame.size.height)];
             [self.sendMessageButton setFrame:CGRectMake(self.sendMessageButton.frame.origin.x
-                                                        , self.sendMessageButton.frame.origin.y - scrollingLandscape
+                                                        , self.sendMessageButton.frame.origin.y + scrollingLandscape
                                                         , self.sendMessageButton.frame.size.width
                                                         , self.sendMessageButton.frame.size.height)];
+            [self.updateMe setFrame:CGRectMake(self.updateMe.frame.origin.x
+                                                        , self.updateMe.frame.origin.y + scrollingLandscape
+                                                        , self.updateMe.frame.size.width
+                                                        , self.updateMe.frame.size.height)];
             [self.smsCountLabel setFrame:CGRectMake(self.smsCountLabel.frame.origin.x
-                                                    , self.smsCountLabel.frame.origin.y - scrollingLandscape
+                                                    , self.smsCountLabel.frame.origin.y + scrollingLandscape
                                                     , self.smsCountLabel.frame.size.width
                                                     , self.smsCountLabel.frame.size.height)];
         }

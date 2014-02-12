@@ -18,9 +18,9 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIImageView *antibot;
 @property (strong, nonatomic) IBOutlet UILabel     *smsCountLabel;
-@property (strong, nonatomic) IBOutlet UIButton *updateMe;
-@property (strong, nonatomic) NSMutableArray *messages;
-@property (strong, nonatomic) Contact *contact;
+@property (strong, nonatomic) IBOutlet UIButton    *updateMe;
+@property (strong, nonatomic) NSMutableArray       *messages;
+@property (strong, nonatomic) Contact              *contact;
 
 - (IBAction)sendMessage:(id)sender;
 - (IBAction)updateMe:(id)sender;

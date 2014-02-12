@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4E114E1F1649981A00C4F7F2 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E114E1E1649981A00C4F7F2 /* aqua.png */; };
-		4E1392D4166D623E00568FCF /* SMS57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1392D3166D623E00568FCF /* SMS57.png */; };
-		4E1392D8166D62C500568FCF /* SMS_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1392D7166D62C500568FCF /* SMS_114.png */; };
 		4E275C7A1677EF9700AD3B96 /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E275C791677EF9700AD3B96 /* update.png */; };
 		4E2DD2421662D4FF0082A551 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DD2411662D4FF0082A551 /* Contact.m */; };
 		4E2DD2451662DB5A0082A551 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DD2441662DB5A0082A551 /* SQLiteManager.m */; };
@@ -37,14 +35,18 @@
 		4E9B3137163ADFF3008EA31E /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9B3135163ADFF3008EA31E /* MainStoryboard_iPad.storyboard */; };
 		4E9B313A163ADFF3008EA31E /* FreeSMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9B3139163ADFF3008EA31E /* FreeSMSViewController.m */; };
 		4EB3FC3C1654DCA700CB9F2D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB3FC3B1654DCA700CB9F2D /* QuartzCore.framework */; };
+		4EB92D8A18ABD05A009AFAAD /* SMS_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB92D8418ABD05A009AFAAD /* SMS_29.png */; };
+		4EB92D8B18ABD05A009AFAAD /* SMS_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB92D8518ABD05A009AFAAD /* SMS_58.png */; };
+		4EB92D8C18ABD05A009AFAAD /* SMS_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB92D8618ABD05A009AFAAD /* SMS_80.png */; };
+		4EB92D8D18ABD05A009AFAAD /* SMS_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB92D8718ABD05A009AFAAD /* SMS_57.png */; };
+		4EB92D8E18ABD05A009AFAAD /* SMS_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB92D8818ABD05A009AFAAD /* SMS_114.png */; };
+		4EB92D8F18ABD05A009AFAAD /* SMS_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB92D8918ABD05A009AFAAD /* SMS_120.png */; };
 		4EEABAE5163E90BF00E6E255 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEABAE4163E90BF00E6E255 /* ChatViewController.m */; };
 		4EEABAEC163E914A00E6E255 /* ChatMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEABAEB163E914A00E6E255 /* ChatMessageTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4E114E1E1649981A00C4F7F2 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
-		4E1392D3166D623E00568FCF /* SMS57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SMS57.png; path = ../SMS57.png; sourceTree = "<group>"; };
-		4E1392D7166D62C500568FCF /* SMS_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SMS_114.png; path = ../SMS_114.png; sourceTree = "<group>"; };
 		4E275C791677EF9700AD3B96 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
 		4E2DD2401662D4FF0082A551 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		4E2DD2411662D4FF0082A551 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
@@ -84,6 +86,12 @@
 		4E9B3138163ADFF3008EA31E /* FreeSMSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeSMSViewController.h; sourceTree = "<group>"; };
 		4E9B3139163ADFF3008EA31E /* FreeSMSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeSMSViewController.m; sourceTree = "<group>"; };
 		4EB3FC3B1654DCA700CB9F2D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4EB92D8418ABD05A009AFAAD /* SMS_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMS_29.png; sourceTree = "<group>"; };
+		4EB92D8518ABD05A009AFAAD /* SMS_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMS_58.png; sourceTree = "<group>"; };
+		4EB92D8618ABD05A009AFAAD /* SMS_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMS_80.png; sourceTree = "<group>"; };
+		4EB92D8718ABD05A009AFAAD /* SMS_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMS_57.png; sourceTree = "<group>"; };
+		4EB92D8818ABD05A009AFAAD /* SMS_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMS_114.png; sourceTree = "<group>"; };
+		4EB92D8918ABD05A009AFAAD /* SMS_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SMS_120.png; sourceTree = "<group>"; };
 		4EEABAE3163E90BF00E6E255 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		4EEABAE4163E90BF00E6E255 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		4EEABAEA163E914A00E6E255 /* ChatMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageTableViewCell.h; sourceTree = "<group>"; };
@@ -243,8 +251,12 @@
 				4E9B312C163ADFF3008EA31E /* Default.png */,
 				4E9B312E163ADFF3008EA31E /* Default@2x.png */,
 				4E9B3130163ADFF3008EA31E /* Default-568h@2x.png */,
-				4E1392D7166D62C500568FCF /* SMS_114.png */,
-				4E1392D3166D623E00568FCF /* SMS57.png */,
+				4EB92D8418ABD05A009AFAAD /* SMS_29.png */,
+				4EB92D8518ABD05A009AFAAD /* SMS_58.png */,
+				4EB92D8618ABD05A009AFAAD /* SMS_80.png */,
+				4EB92D8718ABD05A009AFAAD /* SMS_57.png */,
+				4EB92D8818ABD05A009AFAAD /* SMS_114.png */,
+				4EB92D8918ABD05A009AFAAD /* SMS_120.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,13 +316,17 @@
 				4E9B3125163ADFF3008EA31E /* InfoPlist.strings in Resources */,
 				4E9B312D163ADFF3008EA31E /* Default.png in Resources */,
 				4E9B312F163ADFF3008EA31E /* Default@2x.png in Resources */,
+				4EB92D8F18ABD05A009AFAAD /* SMS_120.png in Resources */,
+				4EB92D8D18ABD05A009AFAAD /* SMS_57.png in Resources */,
+				4EB92D8E18ABD05A009AFAAD /* SMS_114.png in Resources */,
 				4E9B3131163ADFF3008EA31E /* Default-568h@2x.png in Resources */,
+				4EB92D8B18ABD05A009AFAAD /* SMS_58.png in Resources */,
 				4E9B3134163ADFF3008EA31E /* MainStoryboard_iPhone.storyboard in Resources */,
+				4EB92D8C18ABD05A009AFAAD /* SMS_80.png in Resources */,
 				4E9B3137163ADFF3008EA31E /* MainStoryboard_iPad.storyboard in Resources */,
+				4EB92D8A18ABD05A009AFAAD /* SMS_29.png in Resources */,
 				4E114E1F1649981A00C4F7F2 /* aqua.png in Resources */,
 				4E439C1F165CE4970040D8CC /* SMS.sqlite in Resources */,
-				4E1392D4166D623E00568FCF /* SMS57.png in Resources */,
-				4E1392D8166D62C500568FCF /* SMS_114.png in Resources */,
 				4E275C7A1677EF9700AD3B96 /* update.png in Resources */,
 				4E6C894317477D5500B0C9E4 /* SVProgressHUD.bundle in Resources */,
 			);
@@ -423,7 +439,7 @@
 		4E9B313E163ADFF3008EA31E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,7 +465,7 @@
 		4E9B313F163ADFF3008EA31E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
