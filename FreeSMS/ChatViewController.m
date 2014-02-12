@@ -17,6 +17,9 @@
     BOOL isSending;
     BOOL inetConnection;
     BOOL editMode;
+    BOOL keyboardShowing;
+    int scrolling;
+    int scrollingLandscape;
 }
 
 @property (nonatomic, strong) NSMutableData *responseData;
@@ -31,7 +34,6 @@
 @synthesize sendMessageField;
 @synthesize sendMessageButton;
 @synthesize tableView;
-@synthesize scrollView;
 
 @synthesize messages = _messages;
 @synthesize responseData = _responseData;
@@ -54,11 +56,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.message = [[Message alloc] init];
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height);
-    
     self.navigationItem.title = self.contact.name;
-    
-
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reachabilityChanged:)
@@ -81,6 +79,8 @@
     };
     
     [reach startNotifier];
+    
+    [self getScreenConstants];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -97,8 +97,6 @@
     [self setAntibot:nil];
     [self setAntibotText:nil];
     [self setSmsCountLabel:nil];
-    [self setScrollView:nil];
-    
     [self setUpdateMe:nil];
     [super viewDidUnload];
 }
@@ -210,40 +208,123 @@
 }
 
 -(void)keyboardShow{
-    if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||self.interfaceOrientation == UIInterfaceOrientationLandscapeRight){
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.contentSize.height + 170);
+    keyboardShowing = YES;
+    if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight){
+        [UIView animateWithDuration:0.20F animations:^{
+            [self.antibot setFrame:CGRectMake(self.antibot.frame.origin.x
+                                              , self.antibot.frame.origin.y - scrollingLandscape
+                                              , self.antibot.frame.size.width
+                                              , self.antibot.frame.size.height)];
+            [self.antibotText setFrame:CGRectMake(self.antibotText.frame.origin.x
+                                                  , self.antibotText.frame.origin.y - scrollingLandscape
+                                                  , self.antibotText.frame.size.width
+                                                  , self.antibotText.frame.size.height)];
+            [self.sendMessageField setFrame:CGRectMake(self.sendMessageField.frame.origin.x
+                                                       , self.sendMessageField.frame.origin.y - scrollingLandscape
+                                                       , self.sendMessageField.frame.size.width
+                                                       , self.sendMessageField.frame.size.height)];
+            [self.sendMessageButton setFrame:CGRectMake(self.sendMessageButton.frame.origin.x
+                                                        , self.sendMessageButton.frame.origin.y - scrollingLandscape
+                                                        , self.sendMessageButton.frame.size.width
+                                                        , self.sendMessageButton.frame.size.height)];
+            [self.smsCountLabel setFrame:CGRectMake(self.smsCountLabel.frame.origin.x
+                                                    , self.smsCountLabel.frame.origin.y - scrollingLandscape
+                                                    , self.smsCountLabel.frame.size.width
+                                                    , self.smsCountLabel.frame.size.height)];
+                    }];
+    } else {
+        [UIView animateWithDuration:0.20F animations:^{
+            [self.antibot setFrame:CGRectMake(self.antibot.frame.origin.x
+                                              , self.antibot.frame.origin.y - scrolling
+                                              , self.antibot.frame.size.width
+                                              , self.antibot.frame.size.height)];
+            [self.antibotText setFrame:CGRectMake(self.antibotText.frame.origin.x
+                                                  , self.antibotText.frame.origin.y - scrolling
+                                                  , self.antibotText.frame.size.width
+                                                  , self.antibotText.frame.size.height)];
+            [self.sendMessageField setFrame:CGRectMake(self.sendMessageField.frame.origin.x
+                                                       , self.sendMessageField.frame.origin.y - scrolling
+                                                       , self.sendMessageField.frame.size.width
+                                                       , self.sendMessageField.frame.size.height)];
+            [self.sendMessageButton setFrame:CGRectMake(self.sendMessageButton.frame.origin.x
+                                                        , self.sendMessageButton.frame.origin.y - scrolling
+                                                        , self.sendMessageButton.frame.size.width
+                                                        , self.sendMessageButton.frame.size.height)];
+            [self.smsCountLabel setFrame:CGRectMake(self.smsCountLabel.frame.origin.x
+                                                    , self.smsCountLabel.frame.origin.y - scrolling
+                                                    , self.smsCountLabel.frame.size.width
+                                                    , self.smsCountLabel.frame.size.height)];
+            [self.tableView setFrame:CGRectMake(self.tableView.frame.origin.x
+                                                    , self.tableView.frame.origin.y
+                                                    , self.tableView.frame.size.width
+                                                    , self.tableView.frame.size.height - scrolling)];
+            self.messages.count == 0 ? 0 : [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0]
+                                  atScrollPosition:UITableViewScrollPositionBottom
+                                          animated:NO];
+            }];
     }
-    else {
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.contentSize.height + 215);
-    }
-    CGFloat tempy = self.scrollView.contentSize.height;
-    CGFloat tempx = self.scrollView.contentSize.width;;
-    CGRect zoomRect = CGRectMake((tempx/2), (tempy/2), tempy, tempx);
-
-    [UIView animateWithDuration:0.25F animations:^{
-        [self.scrollView scrollRectToVisible:zoomRect animated:NO];
-    }];
 }
 
 -(void)keyboardHide{
-    
+    keyboardShowing = NO;
     [UIView animateWithDuration:0.25F animations:^{
         if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||self.interfaceOrientation == UIInterfaceOrientationLandscapeRight){
-            self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.contentSize.height - 170);
+            [self.antibot setFrame:CGRectMake(self.antibot.frame.origin.x
+                                              , self.antibot.frame.origin.y - scrollingLandscape
+                                              , self.antibot.frame.size.width
+                                              , self.antibot.frame.size.height)];
+            [self.antibotText setFrame:CGRectMake(self.antibotText.frame.origin.x
+                                                  , self.antibotText.frame.origin.y - scrollingLandscape
+                                                  , self.antibotText.frame.size.width
+                                                  , self.antibotText.frame.size.height)];
+            [self.sendMessageField setFrame:CGRectMake(self.sendMessageField.frame.origin.x
+                                                       , self.sendMessageField.frame.origin.y - scrollingLandscape
+                                                       , self.sendMessageField.frame.size.width
+                                                       , self.sendMessageField.frame.size.height)];
+            [self.sendMessageButton setFrame:CGRectMake(self.sendMessageButton.frame.origin.x
+                                                        , self.sendMessageButton.frame.origin.y - scrollingLandscape
+                                                        , self.sendMessageButton.frame.size.width
+                                                        , self.sendMessageButton.frame.size.height)];
+            [self.smsCountLabel setFrame:CGRectMake(self.smsCountLabel.frame.origin.x
+                                                    , self.smsCountLabel.frame.origin.y - scrollingLandscape
+                                                    , self.smsCountLabel.frame.size.width
+                                                    , self.smsCountLabel.frame.size.height)];
         }
         else{
-            self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.contentSize.height - 215);
+            [self.antibot setFrame:CGRectMake(self.antibot.frame.origin.x
+                                              , self.antibot.frame.origin.y + scrolling
+                                              , self.antibot.frame.size.width
+                                              , self.antibot.frame.size.height)];
+            [self.antibotText setFrame:CGRectMake(self.antibotText.frame.origin.x
+                                                  , self.antibotText.frame.origin.y + scrolling
+                                                  , self.antibotText.frame.size.width
+                                                  , self.antibotText.frame.size.height)];
+            [self.sendMessageField setFrame:CGRectMake(self.sendMessageField.frame.origin.x
+                                                       , self.sendMessageField.frame.origin.y + scrolling
+                                                       , self.sendMessageField.frame.size.width
+                                                       , self.sendMessageField.frame.size.height)];
+            [self.sendMessageButton setFrame:CGRectMake(self.sendMessageButton.frame.origin.x
+                                                        , self.sendMessageButton.frame.origin.y + scrolling
+                                                        , self.sendMessageButton.frame.size.width
+                                                        , self.sendMessageButton.frame.size.height)];
+            [self.smsCountLabel setFrame:CGRectMake(self.smsCountLabel.frame.origin.x
+                                                    , self.smsCountLabel.frame.origin.y + scrolling
+                                                    , self.smsCountLabel.frame.size.width
+                                                    , self.smsCountLabel.frame.size.height)];
+            [self.tableView setFrame:CGRectMake(self.tableView.frame.origin.x
+                                                , self.tableView.frame.origin.y
+                                                , self.tableView.frame.size.width
+                                                , self.tableView.frame.size.height + scrolling)];
         }
     }];
 }
 
 
-#pragma mark - 
+#pragma mark -
 #pragma mark TextFieldDelegate
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
-    if(self.scrollView.contentSize.height < 420)
+    if(!keyboardShowing)
         [self keyboardShow];
     return YES;
 }
@@ -470,6 +551,14 @@ static CGFloat padding = 20.0;
         NSLog(@"Notification Says Unreachable");
         inetConnection = NO;
     }
+}
+
+- (void) getScreenConstants {
+    if ([[UIDevice currentDevice] systemVersion].floatValue >= 7) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    scrolling = 215;
+    scrollingLandscape = 170;
 }
 
 @end
