@@ -15,13 +15,13 @@
 		4E439C1F165CE4970040D8CC /* SMS.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4E439C1E165CE4970040D8CC /* SMS.sqlite */; };
 		4E439C21165CE4D40040D8CC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E439C20165CE4D40040D8CC /* libsqlite3.0.dylib */; };
 		4E6A3AB0169790C400C50B20 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6A3AAF169790C400C50B20 /* AddViewController.m */; };
-		4E6C894317477D5500B0C9E4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E6C894017477D5500B0C9E4 /* SVProgressHUD.bundle */; };
-		4E6C894417477D5500B0C9E4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C894217477D5500B0C9E4 /* SVProgressHUD.m */; };
 		4E6C894917479A9C00B0C9E4 /* CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C894817479A9C00B0C9E4 /* CustomAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4E709AEB166FCA04000C1C4D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E709AEA166FCA04000C1C4D /* Reachability.m */; };
 		4E709AED166FD45F000C1C4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E709AEC166FD45F000C1C4D /* SystemConfiguration.framework */; };
 		4E7146EE1663747800670A92 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7146ED1663747800670A92 /* AddressBookUI.framework */; };
 		4E7146F31663766200670A92 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E7146F1166375DA00670A92 /* AddressBook.framework */; };
+		4E783C7D18AD2B71002011A4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E783C7A18AD2B71002011A4 /* SVProgressHUD.bundle */; };
+		4E783C7E18AD2B71002011A4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E783C7C18AD2B71002011A4 /* SVProgressHUD.m */; };
 		4E9B311B163ADFF3008EA31E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9B311A163ADFF3008EA31E /* UIKit.framework */; };
 		4E9B311D163ADFF3008EA31E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9B311C163ADFF3008EA31E /* Foundation.framework */; };
 		4E9B311F163ADFF3008EA31E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9B311E163ADFF3008EA31E /* CoreGraphics.framework */; };
@@ -58,9 +58,6 @@
 		4E439C20165CE4D40040D8CC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4E6A3AAE169790C400C50B20 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		4E6A3AAF169790C400C50B20 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
-		4E6C894017477D5500B0C9E4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = SOURCE_ROOT; };
-		4E6C894117477D5500B0C9E4 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = SOURCE_ROOT; };
-		4E6C894217477D5500B0C9E4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		4E6C894717479A9C00B0C9E4 /* CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlertView.h; sourceTree = "<group>"; };
 		4E6C894817479A9C00B0C9E4 /* CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlertView.m; sourceTree = "<group>"; };
 		4E709AE9166FCA04000C1C4D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -68,6 +65,9 @@
 		4E709AEC166FD45F000C1C4D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4E7146ED1663747800670A92 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		4E7146F1166375DA00670A92 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		4E783C7A18AD2B71002011A4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		4E783C7B18AD2B71002011A4 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		4E783C7C18AD2B71002011A4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		4E9B3116163ADFF3008EA31E /* FreeSMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeSMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9B311A163ADFF3008EA31E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E9B311C163ADFF3008EA31E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,20 +167,10 @@
 		4E6C893F17477D3200B0C9E4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4E783C7818AD2B71002011A4 /* SVProgressHUD */,
 				4E6C894617479A8700B0C9E4 /* CustomAlertView */,
-				4E6C894517479A7400B0C9E4 /* SVProgressHUD */,
 			);
 			name = Sources;
-			sourceTree = "<group>";
-		};
-		4E6C894517479A7400B0C9E4 /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				4E6C894017477D5500B0C9E4 /* SVProgressHUD.bundle */,
-				4E6C894117477D5500B0C9E4 /* SVProgressHUD.h */,
-				4E6C894217477D5500B0C9E4 /* SVProgressHUD.m */,
-			);
-			name = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		4E6C894617479A8700B0C9E4 /* CustomAlertView */ = {
@@ -190,6 +180,16 @@
 				4E6C894817479A9C00B0C9E4 /* CustomAlertView.m */,
 			);
 			name = CustomAlertView;
+			sourceTree = "<group>";
+		};
+		4E783C7818AD2B71002011A4 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4E783C7A18AD2B71002011A4 /* SVProgressHUD.bundle */,
+				4E783C7B18AD2B71002011A4 /* SVProgressHUD.h */,
+				4E783C7C18AD2B71002011A4 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		4E9B310B163ADFF3008EA31E = {
@@ -329,11 +329,11 @@
 				4E9B3134163ADFF3008EA31E /* MainStoryboard_iPhone.storyboard in Resources */,
 				4EB92D8C18ABD05A009AFAAD /* SMS_80.png in Resources */,
 				4E9B3137163ADFF3008EA31E /* MainStoryboard_iPad.storyboard in Resources */,
+				4E783C7D18AD2B71002011A4 /* SVProgressHUD.bundle in Resources */,
 				4EB92D8A18ABD05A009AFAAD /* SMS_29.png in Resources */,
 				4E114E1F1649981A00C4F7F2 /* aqua.png in Resources */,
 				4E439C1F165CE4970040D8CC /* SMS.sqlite in Resources */,
 				4E275C7A1677EF9700AD3B96 /* update.png in Resources */,
-				4E6C894317477D5500B0C9E4 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,12 +349,12 @@
 				4E9B313A163ADFF3008EA31E /* FreeSMSViewController.m in Sources */,
 				4EEABAE5163E90BF00E6E255 /* ChatViewController.m in Sources */,
 				4EEABAEC163E914A00E6E255 /* ChatMessageTableViewCell.m in Sources */,
+				4E783C7E18AD2B71002011A4 /* SVProgressHUD.m in Sources */,
 				4E2DD2421662D4FF0082A551 /* Contact.m in Sources */,
 				4E2DD2451662DB5A0082A551 /* SQLiteManager.m in Sources */,
 				4E2DD24B1662DE260082A551 /* Message.m in Sources */,
 				4E709AEB166FCA04000C1C4D /* Reachability.m in Sources */,
 				4E6A3AB0169790C400C50B20 /* AddViewController.m in Sources */,
-				4E6C894417477D5500B0C9E4 /* SVProgressHUD.m in Sources */,
 				4E6C894917479A9C00B0C9E4 /* CustomAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

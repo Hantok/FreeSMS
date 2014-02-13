@@ -419,8 +419,8 @@ static CGFloat padding = 20.0;
 	
 	CGSize textSize = { 260.0, 10000.0 };
 	CGSize size = [cell.message.text sizeWithFont:[UIFont boldSystemFontOfSize:13]
-					  constrainedToSize:textSize
-						  lineBreakMode:NSLineBreakByWordWrapping];
+                                constrainedToSize:textSize
+                                    lineBreakMode:NSLineBreakByWordWrapping];
 	size.width += (padding/2);
 	
     
@@ -461,7 +461,7 @@ static CGFloat padding = 20.0;
 	CGSize  textSize = { 260.0, 10000.0 };
 	CGSize size = [msg sizeWithFont:[UIFont boldSystemFontOfSize:13]
                   constrainedToSize:textSize 
-                      lineBreakMode:NSLineBreakByCharWrapping];
+                      lineBreakMode:NSLineBreakByWordWrapping];
 	
 	size.height += padding;
 	return size.height+padding+10;
@@ -499,7 +499,7 @@ static CGFloat padding = 20.0;
 
 -(void)showLoading
 {
-    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeGradient];
 }
 
 -(void)reachabilityChanged:(NSNotification*)note
