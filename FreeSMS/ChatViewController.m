@@ -329,7 +329,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSLog(@"Succeeded! Received %d bytes of data",[self.responseData
+    NSLog(@"Succeeded! Received %lu bytes of data",(unsigned long)[self.responseData
                                                    length]);
     if (isPicture)
     {

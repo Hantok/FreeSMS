@@ -13,8 +13,8 @@
 
 @interface FreeSMSViewController ()
 {
-    int selectedIndex;
-    int countOfContacts;
+    NSInteger selectedIndex;
+    NSInteger countOfContacts;
 }
 
 @end
@@ -169,34 +169,34 @@
 
 - (void)displayPerson:(ABRecordRef)person
 {
-    NSString* name =[NSString stringWithFormat:@"%@ %@",(__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty), (__bridge_transfer NSString*)ABRecordCopyValue(person,kABPersonLastNameProperty)];
-                                                                                                                                                                                           
-    NSString* phone = nil;
-    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
-                                                     kABPersonPhoneProperty);
-    if (ABMultiValueGetCount(phoneNumbers) > 0) {
-        phone = (__bridge_transfer NSString*)
-        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
-    } else {
-        phone = @"[None]";
-    }
-    phone = [phone stringByReplacingOccurrencesOfString:@")" withString:@""];
-    phone = [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
-    phone = [phone stringByReplacingOccurrencesOfString:@"(" withString:@""];
-    
-    NSRange zero = [phone rangeOfString:@"0"];
-    if(zero.length != 0 && zero.location < 6)
-    {
-        phone = [phone substringFromIndex:(NSMaxRange(zero) - 1)];
-        if (zero.location == 0)
-        {
-            phone = [phone substringFromIndex:(NSMaxRange(zero) + 2)];
+    NSString* name = @"";
+    NSString* phone = @"[None]";
+    NSString* firstName = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    NSString* lastName = (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
+    if (firstName.length != 0) {
+        if (lastName.length != 0) {
+            name =[NSString stringWithFormat:@"%@ %@", firstName, lastName];
+        }else {
+            name = firstName;
         }
     }
-    
-        [SQLiteManager insertToContactsWithName:name phone:phone];
-        self.contacts = [SQLiteManager selectFromTableName:@"Contacts"];
-        [self.tableView reloadData];
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    if (ABMultiValueGetCount(phoneNumbers) > 0) {
+        for (int i = 0; i < ABMultiValueGetCount(phoneNumbers); i++){
+            NSString* fetchedPhone = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(phoneNumbers, i);
+            fetchedPhone = [[fetchedPhone componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+            NSRange zero = [fetchedPhone rangeOfString:@"0"];
+            fetchedPhone = [fetchedPhone substringFromIndex:(NSMaxRange(zero) - 1)];
+            NSString* code = [fetchedPhone substringToIndex:3];
+            if ( [code isEqualToString:@"063"] || [code isEqualToString:@"093"]) {
+                phone = fetchedPhone;
+                break;
+            }
+        }
+    }
+    [SQLiteManager insertToContactsWithName:name phone:phone];
+    self.contacts = [SQLiteManager selectFromTableName:@"Contacts"];
+    [self.tableView reloadData];
 }
 
 @end
