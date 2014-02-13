@@ -290,6 +290,11 @@
 				CLASSPREFIX = FreeSMS;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Roman Slysh";
+				TargetAttributes = {
+					4E9B3115163ADFF3008EA31E = {
+						DevelopmentTeam = 96E68VV769;
+					};
+				};
 			};
 			buildConfigurationList = 4E9B3110163ADFF3008EA31E /* Build configuration list for PBXProject "FreeSMS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -393,7 +398,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -422,8 +428,9 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Oguz Demir (96E68VV769)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Oguz Demir (96E68VV769)";
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -439,7 +446,8 @@
 		4E9B313E163ADFF3008EA31E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,14 +457,13 @@
 				GCC_PREFIX_HEADER = "FreeSMS/FreeSMS-Prefix.pch";
 				HEADER_SEARCH_PATHS = "~/SSToolkit";
 				INFOPLIST_FILE = "FreeSMS/FreeSMS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8C0218F7-B2DE-420D-8E3C-5FB6676D7966";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8C0218F7-B2DE-420D-8E3C-5FB6676D7966";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -465,8 +472,9 @@
 		4E9B313F163ADFF3008EA31E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Oguz Demir (5C3QGJ6V4B)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Oguz Demir (96E68VV769)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Oguz Demir (96E68VV769)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -475,14 +483,13 @@
 				GCC_PREFIX_HEADER = "FreeSMS/FreeSMS-Prefix.pch";
 				HEADER_SEARCH_PATHS = "~/SSToolkit";
 				INFOPLIST_FILE = "FreeSMS/FreeSMS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8C0218F7-B2DE-420D-8E3C-5FB6676D7966";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8C0218F7-B2DE-420D-8E3C-5FB6676D7966";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
