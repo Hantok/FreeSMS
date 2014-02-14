@@ -18,6 +18,7 @@
     BOOL inetConnection;
     BOOL editMode;
     BOOL keyboardShowing;
+    BOOL viewWillDisappear;
     int scrolling;
     int scrollingLandscape;
 }
@@ -285,6 +286,10 @@
     }
 }
 
+-(void) viewWillDisappear:(BOOL)animated{
+    viewWillDisappear = YES;
+}
+
 #pragma mark -
 #pragma mark TextFieldDelegate
 
@@ -295,9 +300,8 @@
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
-    
     //if empty antibot - get picture
-    if(textField == self.antibotText && [self.antibotText.text isEqualToString:@""])
+    if(textField == self.antibotText && [self.antibotText.text isEqualToString:@""] && !viewWillDisappear)
     {
         if (self.smsCountLabel.text.intValue == 0)
             [self updateMe:self];
@@ -368,7 +372,7 @@
                 isSending = NO;
                 
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-                [formatter setDateFormat: @"yyyy-mm-dd HH:mm:ss"];
+                [formatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
                 [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
                 self.time = [formatter stringFromDate:[NSDate date]];
                 
@@ -417,7 +421,7 @@ static CGFloat padding = 20.0;
     // set message's text
 	cell.message.text = [[self.messages objectAtIndex:indexPath.row] txt];
 	
-	CGSize textSize = { 260.0, 10000.0 };
+	CGSize textSize = { 260.0, 11000.0 };
 	CGSize size = [cell.message.text sizeWithFont:[UIFont boldSystemFontOfSize:13]
                                 constrainedToSize:textSize
                                     lineBreakMode:NSLineBreakByWordWrapping];
@@ -429,14 +433,11 @@ static CGFloat padding = 20.0;
         bgImage = [[UIImage imageNamed:@"aqua.png"] stretchableImageWithLeftCapWidth:24  topCapHeight:15];
         
         [cell.message setFrame:CGRectMake(320 - size.width - padding,
-                                          padding*2,
-                                          size.width+padding,
+                                          padding*1.5,
+                                          size.width+(0.5*padding),
                                           size.height+padding)];
         
-        [cell.backgroundImageView setFrame:CGRectMake(cell.message.frame.origin.x - padding/2,
-                                                      cell.message.frame.origin.y - padding/2,
-                                                      size.width+padding,
-                                                      size.height+padding)];
+        [cell.backgroundImageView setFrame:cell.message.frame];
         
         cell.date.textAlignment = NSTextAlignmentRight;
         cell.backgroundImageView.image = bgImage;
